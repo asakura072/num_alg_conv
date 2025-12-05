@@ -77,7 +77,7 @@ def alg2_page():
     return render_template('alg2.html')
 
 
-# 算法二API - 编码
+# 算法二API - 正变换
 @app.route('/api/alg2/encode', methods=['POST'])
 def alg2_encode():
     data = request.json
@@ -87,7 +87,7 @@ def alg2_encode():
         return jsonify({
             'success': True,
             'result': result,
-            'message': f'✅ 正变换完成\n原始: {n}\n加密: {result}'
+            'message': f'✅ 正变换完成\n输入: {n}\n输出: {result}'
         })
     except Exception as e:
         return jsonify({
@@ -97,7 +97,7 @@ def alg2_encode():
         })
 
 
-# 算法二API - 解码
+# 算法二API - 逆变换
 @app.route('/api/alg2/decode', methods=['POST'])
 def alg2_decode():
     data = request.json
@@ -107,7 +107,7 @@ def alg2_decode():
         return jsonify({
             'success': True,
             'result': result,
-            'message': f'✅ 逆变换完成\n加密: {n}\n原始: {result}'
+            'message': f'✅ 逆变换完成\n输入: {n}\n输出: {result}'
         })
     except Exception as e:
         return jsonify({
