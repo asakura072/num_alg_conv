@@ -1,0 +1,80 @@
+/* static/css/alg1.css - 算法一专用样式 */
+/* 算法一主题颜色 */
+:root {
+    --primary-color: #667eea;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-color: #764ba2;
+    --accent-color: #8b5cf6;
+}
+
+/* 算法一特定的按钮样式 */
+button {
+    background: var(--primary-gradient) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 14px 28px !important;
+    margin: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 14px rgba(102, 126, 234, 0.3) !important;
+}
+
+button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+button.secondary {
+    background: linear-gradient(135deg, #a0aec0 0%, #718096 100%) !important;
+}
+
+/* 算法一的输入框样式 */
+input[type="number"] {
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 14px !important;
+    transition: all 0.3s ease !important;
+    background: white !important;
+    color: #2d3748 !important;
+}
+
+input[type="number"]:focus {
+    border-color: var(--primary-color) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* 算法一的标题样式 */
+h1, h2, h3 {
+    color: var(--primary-color) !important;
+}
+
+/* 算法一的边框和背景 */
+.gradio-container {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+    border-left: 8px solid var(--primary-color) !important;
+}
+
+/* 算法一的标签页样式 */
+.tab-nav button.selected {
+    border-bottom: 3px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+/* 算法一的数字显示样式 */
+input[type="number"][readonly] {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%) !important;
+    border: 2px solid #e2e8f0 !important;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+}
+
+/* 算法一的状态信息框 */
+textarea[aria-label*="状态"] {
+    background: #f8fafc !important;
+    border-left: 4px solid var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}

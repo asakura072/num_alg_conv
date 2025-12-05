@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字处理系统</title>
+    <!-- 使用外部CSS文件 -->
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 背景动画 -->
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <h1>数字处理系统</h1>
+            </div>
+            <p class="subtitle">正整数集双射变换平台</p>
+        </header>
+
+        <!-- 主要内容 -->
+        <main class="main-content">
+            <div class="intro">
+                <h2><i class="fas fa-info-circle"></i> 系统简介</h2>
+                <p>本系统提供两种不同的正整数变换算法，实现正整数集上的双射映射。所有计算均在本地完成，确保数据安全。</p>
+            </div>
+
+            <div class="apps-grid">
+                <!-- 算法一卡片 -->
+                <div class="app-card" id="alg1-card">
+                    <div class="card-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>变换算法一</h3>
+                    <h4>确定性映射</h4>
+                    <div class="card-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>正向映射</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>反向映射</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>可逆运算</span>
+                        </div>
+                    </div>
+                    <div class="card-description">
+                        提供正整数到正整数的确定性双射映射。
+                    </div>
+                    <a href="/alg1" class="card-button" id="alg1-btn">
+                        <i class="fas fa-play-circle"></i>
+                        开始使用
+                    </a>
+                </div>
+
+                <!-- 算法二卡片 -->
+                <div class="app-card" id="alg2-card">
+                    <div class="card-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3>变换算法二</h3>
+                    <h4>动态映射</h4>
+                    <div class="card-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>编码映射</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>解码映射</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>参数化处理</span>
+                        </div>
+                    </div>
+                    <div class="card-description">
+                        基于参数的正整数动态映射方法。
+                    </div>
+                    <a href="/alg2" class="card-button" id="alg2-btn">
+                        <i class="fas fa-play-circle"></i>
+                        开始使用
+                    </a>
+                </div>
+            </div>
+
+            <!-- 使用说明 -->
+            <div class="instructions">
+                <h2><i class="fas fa-book-open"></i> 使用说明</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>选择算法</h4>
+                            <p>点击上方卡片选择要使用的算法</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>输入数字</h4>
+                            <p>在输入框中输入需要处理的正整数</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>执行变换</h4>
+                            <p>点击相应按钮执行正向或反向变换</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>查看结果</h4>
+                            <p>查看变换结果和处理信息</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5><i class="fas fa-shield-alt"></i> 数据安全</h5>
+                    <p>所有计算均在本地完成，无数据上传</p>
+                </div>
+                <div class="footer-section">
+                    <h5><i class="fas fa-bolt"></i> 高性能</h5>
+                    <p>优化的算法实现，快速响应</p>
+                </div>
+                <div class="footer-section">
+                    <h5><i class="fas fa-infinity"></i> 双射性</h5>
+                    <p>确保正整数集上的完全映射</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 数字处理系统 | 版本 1.0 | <span id="current-year"></span></p>
+                <p class="disclaimer">仅供授权使用</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 加载指示器 -->
+    <div class="loading-overlay" id="loading">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>正在加载...</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/js/nav.js"></script>
+    <script>
+        // 设置当前年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // 简单的页面加载效果
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('导航页面加载完成');
+            
+            // 为卡片添加简单的动画效果
+            const cards = document.querySelectorAll('.app-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // 处理导航链接点击
+            document.querySelectorAll('.card-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const loadingOverlay = document.getElementById('loading');
+                    loadingOverlay.style.display = 'flex';
+                    
+                    // 1秒后自动隐藏（如果页面跳转成功的话）
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

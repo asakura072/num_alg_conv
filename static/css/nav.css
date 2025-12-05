@@ -1,0 +1,459 @@
+/* static/css/nav.css - 简化的导航样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f1f5f9;
+    min-height: 100vh;
+}
+
+/* 背景动画 */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.05));
+    animation: float 20s infinite linear;
+}
+
+.circle:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 5s;
+}
+
+.circle:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(20px, 20px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, 40px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-20px, 20px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* 容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 头部 */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.logo i {
+    font-size: 3.5em;
+    color: #667eea;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #94a3b8;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* 主要内容 */
+.main-content {
+    margin-bottom: 60px;
+}
+
+.intro {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.intro h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #cbd5e1;
+    font-size: 1.4em;
+}
+
+.intro h2 i {
+    color: #667eea;
+}
+
+.intro p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* 应用网格 */
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.app-card {
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 20px;
+    padding: 35px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.app-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+#alg1-card:hover {
+    border-color: #667eea;
+}
+
+#alg2-card:hover {
+    border-color: #10b981;
+}
+
+.card-icon {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+#alg1-card .card-icon i {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#alg2-card .card-icon i {
+    background: linear-gradient(135deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.app-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+    color: #e2e8f0;
+}
+
+.app-card h4 {
+    font-size: 1.1em;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.card-features {
+    margin-bottom: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.feature i {
+    color: #10b981;
+    font-size: 0.9em;
+}
+
+.card-description {
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+}
+
+.card-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+#alg2-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.card-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    text-decoration: none;
+    color: white;
+}
+
+#alg2-btn:hover {
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* 使用说明 */
+.instructions {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.instructions h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    color: #cbd5e1;
+    font-size: 1.4em;
+}
+
+.instructions h2 i {
+    color: #667eea;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.step-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: #e2e8f0;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.step-content p {
+    color: #94a3b8;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/* 页脚 */
+.footer {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h5 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #e2e8f0;
+    font-size: 1.1em;
+}
+
+.footer-section h5 i {
+    color: #667eea;
+}
+
+.footer-section p {
+    color: #94a3b8;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+    color: #64748b;
+    font-size: 0.9em;
+}
+
+.disclaimer {
+    font-size: 0.85em;
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+/* 加载指示器 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loader {
+    text-align: center;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(102, 126, 234, 0.3);
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.loader p {
+    color: #cbd5e1;
+    font-size: 1.1em;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 2em;
+    }
+    
+    .apps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .app-card {
+        padding: 25px;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.8em;
+    }
+    
+    .intro, .instructions, .app-card {
+        padding: 20px;
+    }
+}
