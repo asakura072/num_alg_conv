@@ -124,16 +124,13 @@ def health():
 
 
 if __name__ == '__main__':
+    # 开发环境
     print("=" * 60)
-    print("数字变换系统")
+    print("数字变换系统 - 开发模式")
     print("=" * 60)
-    print()
-    print("访问地址:")
-    print("  导航页面: http://127.0.0.1:8080")
-    print("  算法一:   http://127.0.0.1:8080/alg1")
-    print("  算法二:   http://127.0.0.1:8080/alg2")
-    print()
-    print("按 Ctrl+C 停止服务器")
+    print("访问地址: http://127.0.0.1:8080")
     print("=" * 60)
-
-    app.run(host='127.0.0.1', port=8080, debug=False)
+    app.run(host='127.0.0.1', port=8080, debug=True)  # ← debug=True 仅开发使用
+else:
+    # 生产环境（Render 会自动设置 PORT 环境变量）
+    pass  # gunicorn 会自动处理
